@@ -266,7 +266,8 @@ a {
 .hero-highlight {
     color: #1a4d2e;
     position: relative;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    white-space: normal;
 }
 
 .hero-highlight::after {
