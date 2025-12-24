@@ -1,0 +1,126 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+  background: #fcfafa;
+  font-family: 'Inter', sans-serif;
+  color: #302e2e;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+  font-family: 'Marcellus', serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 50px;
+  color: #4e4d49;
+  font-size: clamp(28px, 5vw, 45px);
+}
+
+/* =========================
+   SUB TEXT
+========================= */
+.sub-text {
+  max-width: 950px;
+  margin: 0 auto 60px;
+  text-align: center;
+  font-size: clamp(14px, 2.5vw, 17px);
+  color: #424140;
+}
+
+/* =========================
+   SERVICE BOX
+========================= */
+.service-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 2.5;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform .35s ease, box-shadow .35s ease;
+  border: 2px solid rgba(26, 77, 46, 0.2);
+  background: #000;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.service-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+  transition: transform .4s ease, filter .4s ease;
+}
+
+.service-box:hover img {
+  filter: brightness(50%);
+  transform: scale(1.05);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    transparent 60%
+  );
+  color: #fff;
+}
+
+/* =========================
+   TEXT
+========================= */
+.service-title {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.service-desc {
+  font-size: clamp(13px, 2.5vw, 14px);
+  line-height: 1.4;
+}
+
+/* =========================
+   RESPONSIVE TWEAKS
+========================= */
+@media (max-width: 768px) {
+  .service-box:hover {
+    transform: none;
+  }
+
+  .sub-text {
+    margin-bottom: 40px;
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-overlay {
+    padding: 15px;
+  }
+
+  .service-desc {
+    line-height: 1.3;
+  }
+}

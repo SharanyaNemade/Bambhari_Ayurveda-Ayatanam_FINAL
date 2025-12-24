@@ -1,0 +1,684 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    background: #f5f0e6;
+}
+
+.section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    z-index: 1;
+}
+
+.section-1 .bg-image {
+    background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+    opacity: 1;
+}
+
+.section-2 .bg-image {
+    background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: opacity 1.2s ease;
+}
+
+.content-box {
+    position: relative;
+    z-index: 3;
+    color: white;
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.section-3 {
+    min-height: 100vh;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+.section-3-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.section-3-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-4 {
+    background: #f5f0e6;
+    color: #333;
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-content-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-5 {
+    background: #e8e1d2;
+    color: #333;
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    color: #ffffff !important;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: normal;
+    color: #f0f0f0;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #2c5530;
+}
+
+.section-title-white {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-content {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.indications-list {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.indications-list li {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    padding-left: 30px;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.indications-list li:before {
+    content: "•";
+    color: #d4a574;
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.shloka {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 40px 0;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    line-height: 1.6;
+}
+
+.shloka-text {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.nav-dots {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+/* Footer */
+footer {
+    background: #2c5530;
+    color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* =========================================== */
+/* RESPONSIVE MEDIA QUERIES - FIXED TEXT ALIGNMENT */
+/* =========================================== */
+
+/* Tablet Devices (768px and below) */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title, .section-title-white {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .text-content {
+        font-size: 1.1rem;
+    }
+    
+    .content-box {
+        padding: 25px;
+        margin: 15px;
+    }
+    
+    .nav-dots {
+        right: 15px;
+    }
+    
+    .indications-list li {
+        font-size: 1.1rem;
+    }
+    
+    .section-3-content,
+    .section-4,
+    .section-5 {
+        padding: 60px 15px;
+    }
+    
+    .shloka {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    .shloka-text {
+        font-size: 1.2rem;
+    }
+    
+    /* Fix for conclusion section */
+    .section-5 .container {
+        padding: 20px 15px !important;
+    }
+    
+    .conclusion-card {
+        padding: 30px 20px !important;
+        border-radius: 15px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .conclusion-card h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .conclusion-card .lead {
+        font-size: 1.05rem !important;
+        line-height: 1.5 !important;
+        text-align: left !important; /* CHANGED FROM justify */
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .conclusion-card .row.g-4 {
+        gap: 15px !important;
+        margin: 0 !important;
+    }
+    
+    .conclusion-card .col-lg-6 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .conclusion-card [class*="col-"] > div {
+        padding: 20px !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .conclusion-card h4 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .conclusion-card p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        text-align: left !important; /* CHANGED FROM justify */
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+}
+
+/* Mobile Devices (480px and below) - REMOVED justify */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .section-title, .section-title-white {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .text-content {
+        font-size: 1rem;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left !important; /* ADDED */
+    }
+    
+    .content-box {
+        padding: 20px 15px;
+        margin: 10px;
+        backdrop-filter: blur(3px);
+        text-align: left !important; /* ADDED for mobile */
+    }
+    
+    .content-box p {
+        text-align: left !important; /* FORCE left alignment */
+    }
+    
+    .nav-dots {
+        right: 10px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin: 10px 0;
+    }
+    
+    .section-3-content,
+    .section-4,
+    .section-5 {
+        padding: 40px 10px;
+    }
+    
+    .shloka {
+        padding: 15px;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-align: left !important; /* ADDED */
+    }
+    
+    .shloka-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left !important; /* ADDED */
+    }
+    
+    .indications-list li {
+        font-size: 1rem;
+        padding-left: 20px;
+        line-height: 1.4;
+    }
+    
+    .indications-list li:before {
+        font-size: 1.5rem;
+    }
+    
+    footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-title {
+        font-size: 1.5rem;
+    }
+    
+    .footer-text {
+        font-size: 0.9rem;
+    }
+    
+    /* FIX FOR CONCLUSION SECTION - REMOVED justify */
+    .section-5 .container {
+        padding: 15px 10px !important;
+    }
+    
+    .conclusion-card {
+        padding: 25px 15px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .conclusion-card h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+    }
+    
+    .conclusion-card .lead {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        text-align: left !important; /* CHANGED FROM justify */
+    }
+    
+    .conclusion-card h4 {
+        font-size: 1.1rem !important;
+        text-align: left !important;
+    }
+    
+    .conclusion-card p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        text-align: left !important; /* CHANGED FROM justify */
+    }
+    
+    .conclusion-card .row.g-4 {
+        gap: 10px !important;
+    }
+    
+    .conclusion-card .col-lg-6 {
+        margin-bottom: 15px;
+    }
+    
+    .conclusion-card [class*="col-"] > div {
+        padding: 15px !important;
+        text-align: left !important; /* ADDED */
+    }
+}
+
+/* Small Mobile Devices (360px and below) - Samsung Galaxy S8+ fix */
+@media (max-width: 400px) and (min-width:400px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title, .section-title-white {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .content-box {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    /* REMOVE justify completely for small screens */
+    * {
+        text-align: left !important;
+    }
+    
+    .text-center {
+        text-align: center !important;
+    }
+    
+    /* Conclusion section fix for Galaxy S8+ */
+    .conclusion-card {
+        padding: 20px 12px !important;
+    }
+    
+    .conclusion-card h2 {
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .conclusion-card .lead {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+    }
+    
+    .conclusion-card p {
+        text-align: left !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Fix word spacing specifically */
+    .conclusion-card .lead,
+    .conclusion-card p,
+    .conclusion-card h4 {
+        word-spacing: 0px !important;
+        letter-spacing: 0px !important;
+    }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .section {
+        min-height: 150vh;
+        padding: 30px 15px;
+    }
+    
+    .content-box {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .text-content {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .section-5 .container {
+        padding: 30px 15px !important;
+    }
+    
+    .conclusion-card {
+        padding: 25px 20px !important;
+    }
+}
+
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+    .content-box {
+        max-width: 1000px;
+    }
+    
+    .text-content-container {
+        max-width: 1000px;
+    }
+    
+    .section-3-content {
+        max-width: 1000px;
+    }
+}
+
+/* Extra Large Screens (1600px and above) */
+@media (min-width: 1600px) {
+    .content-box {
+        max-width: 1200px;
+    }
+    
+    .text-content-container {
+        max-width: 1200px;
+    }
+    
+    .section-3-content {
+        max-width: 1200px;
+    }
+    
+    .title {
+        font-size: 4rem;
+    }
+    
+    .section-title, .section-title-white {
+        font-size: 3rem;
+    }
+}
+
+/* =========================================== */
+/* ADDITIONAL FIX FOR WEIRD WORD SPACING */
+/* =========================================== */
+
+/* This fixes the weird space between words issue */
+.conclusion-card * {
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+}
+
+/* Force normal text rendering on mobile */
+@media (max-width: 768px) {
+    .conclusion-card .lead,
+    .conclusion-card p,
+    .text-content p {
+        text-align: left !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+        text-justify: auto !important;
+    }
+}
+
+/* Fix for Samsung Galaxy S8+ specifically */
+@media (max-width: 360px) and (max-height: 740px) {
+    .conclusion-card {
+        padding: 18px 10px !important;
+    }
+    
+    .conclusion-card .lead {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
+    
+    .conclusion-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
+}
